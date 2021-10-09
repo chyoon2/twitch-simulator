@@ -1,7 +1,7 @@
 import React from "react";
 
 const StreamShow = () => {
-  return <div>Stream List</div>;
+  return <div>Stream s</div>;
 };
 
 export default StreamShow;
