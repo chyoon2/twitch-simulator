@@ -15,7 +15,7 @@ class GoogleAuth extends React.Component {
           //.init ^ sets off a promise.
           this.auth = window.gapi.auth2.getAuthInstance();
           //get a ref and save it to an instance of this class.
-          this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+          this.onAuthChange(this.auth.isSignedIn.get());
           this.auth.isSignedIn.listen(this.onAuthChange);
         });
     });
@@ -36,9 +36,9 @@ class GoogleAuth extends React.Component {
   onSignOutClick = () => [this.auth.signOut()];
 
   renderAuthButton() {
-    if (this.state.isSignedIn === null) {
+    if (this.props.isSignedIn === null) {
       return;
-    } else if (this.state.isSignedIn) {
+    } else if (this.props.isSignedIn) {
       return (
         <button className='ui red google button' onClick={this.onSignOutClick}>
           <i className='google icon' /> Log Out
