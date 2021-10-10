@@ -1,8 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
+import { signIn, signOut } from "../actions";
 
 class GoogleAuth extends React.Component {
-  state = { isSignedIn: null };
-
   componentDidMount() {
     window.gapi.load("client:auth2", () => {
       window.gapi.client
@@ -20,8 +20,14 @@ class GoogleAuth extends React.Component {
         });
     });
   }
-  onAuthChange = () => {
-    this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+  onAuthChange = (isSignedIn) => {
+    // this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+    //this callback gets called with a bool, so you can call 'this.auth.isSignedIn.listen(fxn) and it will return a bool to that fxn. so here we add an arg that is a bool
+    if (isSignedIn) {
+      this.props.signIn();
+    } else {
+      this.props.signOut();
+    }
   };
 
   onSignInClick = () => {
@@ -50,5 +56,8 @@ class GoogleAuth extends React.Component {
     return <div> {this.renderAuthButton()} </div>;
   }
 }
+const mapStateToProps = (state) => {
+  return { isSignedIn: state.auth.isSignedIn };
+};
 
-export default GoogleAuth;
+export default connect(mapStateToProps, { signOut, signIn })(GoogleAuth);
