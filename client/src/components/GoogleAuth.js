@@ -24,7 +24,7 @@ class GoogleAuth extends React.Component {
     // this.setState({ isSignedIn: this.auth.isSignedIn.get() });
     //this callback gets called with a bool, so you can call 'this.auth.isSignedIn.listen(fxn) and it will return a bool to that fxn. so here we add an arg that is a bool
     if (isSignedIn) {
-      this.props.signIn();
+      this.props.signIn(this.auth.currentUser.get().getId());
     } else {
       this.props.signOut();
     }
@@ -33,7 +33,9 @@ class GoogleAuth extends React.Component {
   onSignInClick = () => {
     this.auth.signIn();
   };
-  onSignOutClick = () => [this.auth.signOut()];
+  onSignOutClick = () => {
+    this.auth.signOut();
+  };
 
   renderAuthButton() {
     if (this.props.isSignedIn === null) {
@@ -57,7 +59,7 @@ class GoogleAuth extends React.Component {
   }
 }
 const mapStateToProps = (state) => {
-  return { isSignedIn: state.auth.isSignedIn };
+  return { isSignedIn: state.auth.isSignedIn, id: state.auth.userId };
 };
 
 export default connect(mapStateToProps, { signOut, signIn })(GoogleAuth);
