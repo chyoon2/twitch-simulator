@@ -1,0 +1,17 @@
+import { EDIT_STREAM } from "../actions/types";
+
+const streamReducer = (state = {}, action) => {
+  switch (action.type) {
+    case EDIT_STREAM:
+      // const newState = { ...state };
+      // newState[action.payload.id] = action.payload;
+      // return newState;
+      // REFACTOR
+      return { ...state, [action.payload.id]: action.payload };
+    //the [actoin.payload.id] es2015, is not an array. it refered to as key interpolation. we dont know what key we want to add,, but we know it will get added when the code runs.
+    default:
+      return state;
+  }
+};
+
+export default streamReducer;
