@@ -1,4 +1,5 @@
 import streams from "../apis/streams";
+import history from "../history";
 import {
   SIGN_OUT,
   SIGN_IN,
@@ -31,6 +32,8 @@ export const createStream = (formValues) => async (dispatch, getState) => {
   //sometimes its hard, sometimes its easy.
   //have to use the history obj in the browser, that BrowserRouter uses. so instead make your own browser history and dont use browserrouter.
   //remove browser router in your app.js/action-indexjs
+  history.push("/");
+  //push is how we navigate the user around
 };
 
 export const fetchStream = (id) => async (dispatch) => {

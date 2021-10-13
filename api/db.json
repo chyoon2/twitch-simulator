@@ -1,59 +1,21 @@
 {
   "streams": [
     {
-      "title": "dad",
-      "description": "sdadyyy",
-      "id": 1
+      "title": "new stream",
+      "description": "being a big old stream",
+      "id": 15
     },
     {
-      "title": "dad",
-      "description": "sdadyyy",
-      "id": 2
+      "title": "i created this",
+      "description": "i made this one",
+      "userId": "101517279751317178225",
+      "id": 16
     },
     {
-      "title": "dad",
-      "description": "sdadyyy",
-      "id": 3
-    },
-    {
-      "title": "asdf",
-      "description": "asdf",
-      "id": 4
-    },
-    {
-      "title": "asdf",
-      "description": "asdf",
-      "id": 5
-    },
-    {
-      "title": "asdf",
-      "description": "asdf",
-      "id": 6
-    },
-    {
-      "title": "asdf",
-      "description": "asdf",
-      "id": 7
-    },
-    {
-      "title": "asdf",
-      "description": "asdf",
-      "id": 8
-    },
-    {
-      "title": "asdf",
-      "description": "asfd",
-      "id": 9
-    },
-    {
-      "title": "waste",
-      "description": "waste",
-      "id": 10
-    },
-    {
-      "title": "big do",
-      "description": "getme",
-      "id": 11
+      "title": "programmatic nav",
+      "description": "you should get pushed",
+      "userId": "101517279751317178225",
+      "id": 17
     }
   ]
 }
