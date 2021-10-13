@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import {
   FETCH_STREAMS,
   FETCH_STREAM,
