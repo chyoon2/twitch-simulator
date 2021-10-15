@@ -18,5 +18,3 @@ var nms = new NodeMediaServer(config);
 nms.run();
 
 // github.com/illuspas/Node-Media-Server
-
-const NodeMediaServer = require("node-media-server");
