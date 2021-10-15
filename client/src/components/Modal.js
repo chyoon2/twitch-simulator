@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import history from "../history";
+
 const Modal = (props) => {
   return ReactDOM.createPortal(
     <div
@@ -9,14 +10,9 @@ const Modal = (props) => {
       <div
         onClick={(e) => e.stopPropagation()}
         className='ui standard modal visible active'>
-        <div className='header'>Delete Stream</div>
-        <div className='content'>
-          Are you sure you want to Delete this stream?
-        </div>
-        <div className='actions'>
-          <div className='ui button primary'>Delete</div>
-          <div className='ui button'>Cancel</div>
-        </div>
+        <div className='header'>{props.title}</div>
+        <div className='content'>{props.content}</div>
+        <div className='actions'>{props.actions}</div>
       </div>
     </div>,
     document.querySelector("#modal")
